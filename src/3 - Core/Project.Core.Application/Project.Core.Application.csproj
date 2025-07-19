@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="13.0.1" />
+
+	</ItemGroup>
+	
+	<ItemGroup>
+    <ProjectReference Include="..\..\4 - Common\Common.Base\Common.Base.csproj" />
+    <ProjectReference Include="..\..\4 - Common\Common.Validation\Common.Validation.csproj" />
+    <ProjectReference Include="..\Project.Core.Infraestructure\Project.Core.Infraestructure.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DictionaryExtensions.cs" />
+    <Compile Remove="UtilsExtensions.cs" />
+    <Compile Remove="ValidationExtensions.cs" />
+  </ItemGroup>
+
+</Project>

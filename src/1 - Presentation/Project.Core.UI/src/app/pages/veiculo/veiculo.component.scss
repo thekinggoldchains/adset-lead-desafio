@@ -1,0 +1,356 @@
+
+// Paleta de cores do mockup
+$adset-orange: #FF9900;
+$adset-dark: #333;
+$adset-light: #F5F5F5;
+$adset-green: #4CAF50;
+$adset-red: #F44336;
+$adset-gray: #E0E0E0;
+$adset-blue: #2196F3;
+
+.veiculo-container {
+  background: white;
+  min-height: 100vh;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+
+  .header-section {
+    background: $adset-light;
+    padding: 0 0 24px 0;
+    .statistics-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      gap: 32px;
+      padding: 0 32px;
+      .logo-section {
+        .logo {
+          height: 60px;
+          width: auto;
+        }
+      }
+      .stats-section {
+        display: flex;
+        gap: 32px;
+        .stat-item {
+          text-align: left;
+          .stat-number {
+            font-size: 22px;
+            font-weight: 600;
+            color: $adset-dark;
+          }
+          .stat-label {
+            font-size: 15px;
+            color: $adset-green;
+            margin-top: 2px;
+          }
+          &.total .stat-label {
+            color: $adset-blue;
+          }
+          &.with-photos .stat-label {
+            color: $adset-green;
+          }
+          &.without-photos .stat-label {
+            color: $adset-red;
+          }
+        }
+      }
+      .actions-section {
+        display: flex;
+        gap: 16px;
+        button {
+          background: $adset-orange;
+          color: white;
+          font-weight: 600;
+          border-radius: 8px;
+          .mat-icon {
+            margin-right: 8px;
+          }
+        }
+        .save-btn {
+          background: $adset-orange;
+          color: white;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .filters-card {
+    margin: 0 32px 16px 32px;
+    background: $adset-light;
+    border-radius: 12px;
+    box-shadow: none;
+    .mat-card-header {
+      .mat-card-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 600;
+        color: $adset-dark;
+        font-size: 18px;
+      }
+    }
+    .mat-card-content {
+      padding: 0 16px 16px 16px;
+      &.expanded {
+        max-height: 400px;
+      }
+    }
+    .filters-form {
+      .filter-row {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 8px;
+        mat-form-field {
+          flex: 1;
+          min-width: 120px;
+        }
+      }
+      .filter-actions {
+        display: flex;
+        gap: 12px;
+        justify-content: flex-end;
+        margin-top: 8px;
+        button {
+          background: $adset-blue;
+          color: white;
+          font-weight: 600;
+          border-radius: 8px;
+        }
+        .mat-icon {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+
+  .portais-section {
+    display: flex;
+    gap: 24px;
+    margin: 0 32px 16px 32px;
+    .portal-item {
+      background: $adset-light;
+      padding: 12px 24px;
+      border-radius: 12px;
+      box-shadow: none;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      .portal-logo {
+        height: 32px;
+        width: auto;
+      }
+      .portal-stats {
+        display: flex;
+        gap: 8px;
+        .status-icon {
+          &.green {
+            color: $adset-green;
+          }
+          &.red {
+            color: $adset-red;
+          }
+        }
+      }
+    }
+  }
+
+  .veiculo-controls {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: $adset-light;
+    padding: 8px 32px;
+    border-radius: 12px;
+    box-shadow: none;
+    margin-bottom: 8px;
+    .view-controls {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 15px;
+      color: $adset-dark;
+      .mat-icon {
+        font-size: 18px;
+        color: $adset-gray;
+      }
+    }
+    .display-control {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      color: $adset-dark;
+    }
+  }
+
+  .veiculos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+    gap: 24px;
+    margin: 0 32px 16px 32px;
+    .veiculo-card {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      background: white;
+      transition: box-shadow 0.2s ease;
+      &:hover {
+        box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+      }
+      .veiculo-image {
+        position: relative;
+        height: 180px;
+        overflow: hidden;
+        background: $adset-gray;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .image-controls {
+          position: absolute;
+          top: 8px;
+          right: 8px;
+          .delete-btn {
+            background: $adset-red;
+            color: white;
+            border-radius: 50%;
+            &:hover {
+              background: darken($adset-red, 10%);
+            }
+          }
+        }
+      }
+      .veiculo-info {
+        padding: 16px 24px;
+        .veiculo-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 8px;
+          h3 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 600;
+            color: $adset-dark;
+          }
+          button {
+            background: $adset-blue;
+            color: white;
+            font-weight: 600;
+            border-radius: 8px;
+            margin-left: 12px;
+            white-space: nowrap;
+          }
+        }
+        .veiculo-details {
+          .detail-row {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 32px;
+            margin-bottom: 4px;
+            font-size: 15px;
+            color: $adset-dark;
+            .action-buttons {
+              display: flex;
+              gap: 4px;
+              .mat-icon-button {
+                width: 32px;
+                height: 32px;
+                line-height: 32px;
+                .mat-icon {
+                  font-size: 18px;
+                }
+              }
+            }
+          }
+          .price-row {
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px dotted $adset-gray;
+            .price {
+              font-size: 22px;
+              font-weight: bold;
+              color: $adset-green;
+            }
+          }
+        }
+        .portal-status {
+          margin-top: 8px;
+          padding-top: 8px;
+          border-top: 1px dotted $adset-gray;
+          .portal-status-item {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 4px;
+            font-size: 13px;
+            span {
+              color: $adset-dark;
+              font-weight: 500;
+            }
+            .status-indicators {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              .status-box {
+                padding: 2px 8px;
+                border-radius: 4px;
+                background: $adset-light;
+                font-size: 12px;
+                font-weight: 600;
+                &.green {
+                  background: #E8F5E8;
+                  color: $adset-green;
+                }
+                &.red {
+                  background: #FFEBEE;
+                  color: $adset-red;
+                }
+              }
+              .status-icon {
+                font-size: 16px;
+                &.green {
+                  color: $adset-green;
+                }
+                &.red {
+                  color: $adset-red;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .mat-paginator {
+    background: $adset-light;
+    border-radius: 12px;
+    box-shadow: none;
+    margin: 0 32px 32px 32px;
+    .mat-paginator-range-label {
+      color: $adset-dark;
+      font-weight: 600;
+    }
+    .mat-paginator-icon {
+      color: $adset-orange;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .veiculo-container {
+    .statistics-row, .veiculo-controls, .filters-card, .portais-section, .veiculos-grid {
+      margin: 0 8px !important;
+      padding: 0 8px !important;
+    }
+    .veiculos-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
