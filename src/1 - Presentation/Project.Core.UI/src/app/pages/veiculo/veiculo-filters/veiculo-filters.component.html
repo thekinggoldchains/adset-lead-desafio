@@ -1,0 +1,126 @@
+<div class="d-flex flex-column justify-content-center">
+<div  class="filter-container bg-white p-4 rounded shadow-sm">
+        <div class="row g-3 align-items-end">
+            <!-- Placa -->
+            <div class="col-lg-2 col-md-4 col-sm-6">
+                <label for="placa" class="form-label text-muted small">Placa</label>
+                <input type="text" class="input form-control form-control-lg" id="placa" placeholder=""
+                    [(ngModel)]="filters.placa">
+            </div>
+
+            <!-- Marca -->
+            <div class="col-lg-2 col-md-4 col-sm-6">
+                <label for="marca" class="form-label text-muted small">Marca</label>
+                <input type="text" class="form-control form-control-lg" id="modelo" placeholder="" [(ngModel)]="filters.marca" />
+                </div>
+
+            <!-- Modelo -->
+            <div class="col-lg-2 col-md-4 col-sm-6">
+                <label for="modelo" class="form-label text-muted small">Modelo</label>
+                <input type="text" class="form-control form-control-lg" id="modelo" placeholder=""
+                    [(ngModel)]="filters.modelo">
+            </div>
+
+            <!-- Ano Min e Max -->
+            <div class="col-lg-2 col-md-6 col-sm-12 ano-container">
+                <div class="row g-2">
+                    <div class="col-6">
+                        <label for="anoMin" class="form-label text-muted small">Ano Min</label>
+                        <select class="form-select form-select-lg" id="anoMin" [(ngModel)]="filters.anoMin">
+                            <option value="">Todos</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <label for="anoMax" class="form-label text-muted small">Ano Max</label>
+                        <select class="form-select form-select-lg" id="anoMax" [(ngModel)]="filters.anoMax">
+                            <option value="">Todos</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preço -->
+            <div class="col-lg-1 col-md-3 col-sm-6">
+                <label for="preco" class="form-label text-muted small">Preço</label>
+                <select class="form-select form-select-lg" id="preco" [(ngModel)]="filters.preco">
+                    <option value="">Todos</option>
+                    <option value="0-30000">Até R$ 30.000</option>
+                    <option value="30000-60000">R$ 30.000 - R$ 60.000</option>
+                    <option value="60000-100000">R$ 60.000 - R$ 100.000</option>
+                    <option value="100000+">Acima de R$ 100.000</option>
+                </select>
+            </div>
+
+            <!-- Fotos -->
+            <div class="col-lg-1 col-md-3 col-sm-6">
+                <label for="fotos" class="form-label text-muted small">Fotos</label>
+                <select class="form-select form-select-lg" id="fotos" [(ngModel)]="filters.fotos">
+                    <option value="">Todos</option>
+                    <option value="com">Com fotos</option>
+                    <option value="sem">Sem fotos</option>
+                </select>
+            </div>
+
+            <!-- Opcionais -->
+            <div class="col-lg-2 col-md-4 col-sm-6">
+                <label for="opcionais" class="form-label text-muted small">Opcionais</label>
+                <input type="text" class="form-control form-control-lg" id="opcionais" placeholder=""
+                    [(ngModel)]="filters.opcionais">
+            </div>
+        </div>
+
+        <!-- Segunda linha -->
+        <div class="row g-3 align-items-end mt-2">
+            <!-- Cor -->
+            <div class="col-lg-2 col-md-4 col-sm-6">
+                <label for="cor" class="form-label text-muted small">Cor</label>
+                <select class="form-select form-select-lg" id="cor" [(ngModel)]="filters.cor">
+                    <option value="">Todos</option>
+                    <option value="branco">Branco</option>
+                    <option value="preto">Preto</option>
+                    <option value="prata">Prata</option>
+                    <option value="vermelho">Vermelho</option>
+                    <option value="azul">Azul</option>
+                </select>
+            </div>
+
+            <!-- Botão Limpar -->
+            <div class="col-lg-2 col-md-3 col-sm-6">
+                <!-- <button type="button" class="btn btn-outline-secondary btn-lg w-100" (click)="limparFiltros()"
+                    matTooltip="Limpar todos os filtros">
+                    <i class="fas fa-eraser me-2"></i>
+                    Limpar
+                </button> -->
+                <div class="limpar">
+                    <i class="fas fa-eraser"></i>
+                </div>
+            </div>
+
+
+            <!-- Espaçamento -->
+            <div class="col-lg-6 col-md-2 d-none d-lg-block"></div>
+        </div>
+    </div>
+    <!-- Botão Buscar e Chevron -->
+    <div class="d-flex flex-row align-items-center w-100 " style="min-height: 60px;">
+        <div class="flex-grow-1"></div>
+        <div class="col-lg-2 col-md-3 col-sm-6 d-flex justify-content-center">
+            <button type="button" class="btn btn-success btn-lg w-100" (click)="buscar()" matTooltip="Buscar veículos">
+                <i class="fas fa-search me-2"></i>
+                Buscar
+            </button>
+        </div>
+        <div class="flex-grow-1"></div>
+
+    </div>
+</div>

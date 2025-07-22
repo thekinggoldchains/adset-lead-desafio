@@ -1,0 +1,51 @@
+<section class="container-fluid col-12">
+  <app-veiculo-actions></app-veiculo-actions>
+  <app-veiculo-filters *ngIf="filtrosAbertos" [@filtroAnim]></app-veiculo-filters>
+  <div class="d-flex align-items-center toggleFiltro">
+    <i class="fa" [ngClass]="{'fa-chevron-up': filtrosAbertos, 'fa-filter': !filtrosAbertos}" aria-hidden="true"
+      (click)="toggleFiltro()" style="cursor:pointer; transition: transform 0.3s;"></i>
+  </div>
+  <div class="row">
+    <div class="col-12 d-flex justify-content-start align-items-center mb-2 bg-commom border-bottom py-2"
+      style="font-size:1.1rem;">
+      <div class="d-flex flex-row align-items-center me-md-5" style="gap:2.5rem;">
+        <div class="d-flex align-items-center gap-1">
+          <span class="sort-icon bg-success text-white rounded px-1 py-0"><i class="fas fa-sort-up"></i></span>
+          <span class="sort-icon bg-success text-white rounded px-1 py-0"><i class="fas fa-sort-down"></i></span>
+          <span class="ms-2">Marca / Modelo</span>
+          <span class="ms-1 text-success"><i class="fas fa-sort"></i></span>
+        </div>
+        <div class="d-flex align-items-center gap-1">
+          <span class="ms-2">Ano</span>
+          <span class="ms-1 text-success"><i class="fas fa-sort"></i></span>
+        </div>
+        <div class="d-flex align-items-center gap-1">
+          <span class="ms-2">Preço</span>
+          <span class="ms-1 text-secondary"><i class="fas fa-sort"></i></span>
+        </div>
+        <div class="d-flex align-items-center gap-1">
+          <span class="ms-2">Fotos</span>
+          <span class="ms-1 text-success"><i class="fas fa-sort"></i></span>
+        </div>
+      </div>
+      <div class="ms-auto">
+        <span class="me-2">Exibir:</span>
+        <select [(ngModel)]="pageSize" class="form-select d-inline-block w-auto">
+          <option *ngFor="let size of pageSizes" [value]="size">{{size}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-3" *ngFor="let veiculo of pagedVeiculos">
+          <app-veiculo-card [veiculo]="veiculo" (editar)="onEditar($event)"
+            (remover)="onRemover($event)"></app-veiculo-card>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 d-flex justify-content-center mt-3">
+      <mat-paginator [length]="veiculos.length" [pageSize]="pageSize" [pageSizeOptions]="pageSizes"
+        (page)="onPageChange($event)"></mat-paginator>
+    </div>
+  </div>
+</section>

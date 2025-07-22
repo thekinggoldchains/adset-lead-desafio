@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { VeiculoComponent } from './pages/veiculo/veiculo.component';
-
 const routes: Routes = [
   { path: '', redirectTo: '/veiculo', pathMatch: 'full' },
-  { path: 'home', component: VeiculoComponent },
-  { path: 'veiculo', component: VeiculoComponent },
-  { path: '**', redirectTo: '/veiculo-material' }
+  {
+    path: "veiculo",
+    loadChildren: () => import("./pages/veiculo/veiculo.module").then((m) => m.VeiculoModule),
+  },
+  { path: '**', redirectTo: '/veiculo' }
 ];
 
 @NgModule({

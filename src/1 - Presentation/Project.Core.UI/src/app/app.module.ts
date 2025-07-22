@@ -17,14 +17,12 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDividerModule } from '@angular/material/divider';
 
 // Importar componentes
-import { VeiculoComponent } from './pages/veiculo/veiculo.component';
 import { HeaderComponent } from './pages/default/header/header.component';
 import { FooterComponent } from './pages/default/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VeiculoComponent,
     HeaderComponent,
     FooterComponent
   ],

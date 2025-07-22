@@ -1,0 +1,23 @@
+<div class="veiculo-card bg-white rounded shadow-sm p-3 d-flex flex-row align-items-center mb-3">
+  <div class="veiculo-img me-3">
+    <img [src]="veiculo.imagemUrl" alt="Foto do veículo" class="img-fluid rounded" style="width: 120px; height: 90px; object-fit: cover;" />
+  </div>
+  <div class="veiculo-info flex-grow-1">
+    <div class="fw-bold mb-1">{{ veiculo.marca }} {{ veiculo.modelo }} | {{ veiculo.ano }}</div>
+    <div class="text-muted small">Placa - <span class="text-success">{{ veiculo.placa }}</span></div>
+    <div class="text-muted small">Km - <span class="text-success">{{ veiculo.km | number }}</span></div>
+    <div class="text-muted small">Cor - <span class="text-success">{{ veiculo.cor }}</span></div>
+    <div class="mt-2">
+      <button type="button" class="btn btn-dark btn-sm me-2" (click)="editarVeiculo(veiculo)">
+        <i class="fas fa-edit me-1"></i> Editar Veículo
+      </button>
+      <span class="badge bg-success fs-6">R$ {{ veiculo.preco | number:'1.2-2' }}</span>
+    </div>
+  </div>
+  <div class="veiculo-actions d-flex flex-column align-items-end ms-3">
+    <button type="button" class="btn btn-outline-danger btn-sm mb-2" (click)="removerVeiculo(veiculo)">
+      <i class="fas fa-trash"></i>
+    </button>
+    <div class="text-muted small">{{ veiculo.opcionais?.length || 0 }} Opcionais</div>
+  </div>
+</div>

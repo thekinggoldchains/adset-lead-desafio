@@ -1,0 +1,64 @@
+@import 'src/common/styles/variables.scss';
+
+.adset-orange {
+    color: $adset-orange;
+}
+.adset-dark {
+    color: $adset-dark;
+}
+.adset-light {
+    color: $adset-light;
+}
+.adset-green {
+    color: $adset-green;
+}
+
+.adset-red {
+    color: $adset-red;
+}
+
+.adset-gray {
+    color: $adset-gray;
+}
+
+.adset-blue {
+    color: $adset-blue;
+}
+
+.bg-adset-orange {
+    background-color: $adset-orange;
+}
+.bg-adset-dark {
+    background-color: $adset-dark;
+}
+.bg-adset-light {
+    background-color: $adset-light;
+}
+.bg-adset-green {
+    background-color: $adset-green;
+}
+.bg-adset-red {
+    background-color: $adset-red;
+}
+.bg-adset-gray {
+    background-color: $adset-gray;
+}
+.bg-adset-blue {
+    background-color: $adset-blue;
+}
+
+.bg-commom {
+    background-color: #e0e0e0;
+}
+
+.text-commom {
+    color: #838383;
+}
+
+.border-commom {
+    border: 1px solid #c7c7c7;
+}
+
+.pointer {
+    cursor: pointer;
+}

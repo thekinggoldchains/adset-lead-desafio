@@ -1,0 +1,112 @@
+@import '../../../common/styles/global.scss';
+
+.add-car {
+    color: $adset-blue;
+    border-radius: 50%;
+    border: 2px solid $adset-blue;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 0.2rem;
+    cursor: pointer;
+    position: relative;
+    
+    // Transições suaves
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1);
+
+    // Tooltip customizado
+    &::before {
+        content: "Cadastrar Veículo";
+        position: absolute;
+        bottom: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: $adset-dark;
+        color: white;
+        padding: 15px 14px;
+        border-radius: 1px;
+        font-size: 15px;
+        font-weight: 500;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    // Seta do tooltip
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 62px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-top: 8px solid $adset-dark;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1001;
+    }
+
+    &:hover {
+        border-color: darken($adset-blue, 10%);
+        
+        &::before,
+        &::after {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-5px);
+        }
+        
+    }
+    
+    &:active {
+        box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+        transition: all 0.1s ease;
+    }
+
+    .plus-icon {
+        position: absolute;
+        top: 60%;
+        left: 70%;
+        transform: translate(-50%, -50%);
+        font-size: 1.5rem;
+        transition: transform 0.2s ease;
+        color: $adset-blue;
+        background-color: white;
+        border-radius: 50%;
+        border: 1px solid $adset-blue;
+        padding: 2px;
+
+    }
+}
+.export {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    align-items: center;
+    color: $text-commom;
+    margin-top: 10px;
+    border-left: 2px solid $bg-commom;
+    border-right: 2px solid $bg-commom;
+    padding: 0 10px 0 10px;
+    cursor: pointer;
+
+    img {
+        width: 50px;
+        height: 50px;
+    }
+    .download  {
+        font-size: 1.5rem;
+        color: $adset-green-excel;
+    }
+}
